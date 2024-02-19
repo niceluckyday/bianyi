@@ -2,8 +2,6 @@
 
 # Clone the LEDE repository
 git clone https://github.com/coolsnowwolf/lede
-
-# Navigate into the LEDE directory
 cd lede
 
 # Add additional package source
@@ -24,13 +22,12 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Ma
 # Change kernel version
 sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=6.6/g' ./target/linux/x86/Makefile
 
-# Download configuration file
+# Generate .config file non-interactively
+make defconfig
+
+# Copy your custom .config file
 wget https://raw.githubusercontent.com/niceluckyday/bianyi/main/.config -O .config
 
 # Start compilation
-make defconfig
 make download -j$(nproc)
 make V=s -j$(nproc)
-
-# Delete the script
-rm -f "$(pwd)/$(basename "$0")"

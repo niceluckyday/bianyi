@@ -1,23 +1,14 @@
 #!/bin/bash
 
-# 进入 lede 目录
-cd
-cd lede || exit
+# Navigate into LEDE directory and execute subsequent commands
+cd lede && \
 
-# 拉取最新代码
-git pull
+# Generate .config file non-interactively
+make defconfig && \
 
-# 更新软件包索引
-./scripts/feeds update -a
+# Copy your custom .config file
+wget https://raw.githubusercontent.com/niceluckyday/bianyi/main/.config -O .config && \
 
-# 安装所有软件包
-./scripts/feeds install -a
-
-# 使用默认配置
-make defconfig
-
-# 下载依赖的软件包
-make download -j$(nproc)
-
-# 编译 LEDE/OpenWrt，同时显示详细信息
+# Start compilation
+make download -j$(nproc) && \
 make V=s -j$(nproc)

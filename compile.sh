@@ -28,6 +28,7 @@ sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=6.6/g' ./target/linux/x86/Makefi
 wget https://raw.githubusercontent.com/niceluckyday/bianyi/main/.config -O .config
 
 # Start compilation
+make defconfig
 make download -j$(nproc)
 make V=s -j$(nproc)
 

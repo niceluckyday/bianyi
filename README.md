@@ -10,6 +10,6 @@ wget https://raw.githubusercontent.com/niceluckyday/bianyi/main/compile.sh && ch
 
 ```
 #二次编译
-https://raw.githubusercontent.com/niceluckyday/bianyi/main/build_lede.sh && chmod +x build_lede.sh && ./build_lede.sh && rm -f build_lede.sh
+wget https://raw.githubusercontent.com/niceluckyday/bianyi/main/build_lede.sh && chmod +x build_lede.sh && ./build_lede.sh && rm -f build_lede.sh
 ```
 

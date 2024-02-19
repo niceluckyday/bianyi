@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # 进入 lede 目录
+cd
 cd lede || exit
 
 # 拉取最新代码

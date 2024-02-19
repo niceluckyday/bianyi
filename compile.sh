@@ -12,7 +12,7 @@ sed -i '1i src-git haibo https://github.com/haiibo/openwrt-packages' feeds.conf.
 ./scripts/feeds install -a && \
 
 # Modify default settings
-sed -i "s#DISTRIB_REVISION='.*'#DISTRIB_REVISION='$(TZ=UTC-8 date "+%Y.%m.%d")'#" package/lean/default-settings/files/zzz-default-settings && \
+sed -i "s#DISTRIB_REVISION='.*'#DISTRIB_REVISION='\$(TZ=UTC-8 date \"+%Y.%m.%d\")'#" package/lean/default-settings/files/zzz-default-settings && \
 sed -i "s#DISTRIB_DESCRIPTION='.*'#DISTRIB_DESCRIPTION='Lucky '#" package/lean/default-settings/files/zzz-default-settings && \
 sed -i 's/192.168.1.1/10.0.0.2/g' package/base-files/files/bin/config_generate && \
 

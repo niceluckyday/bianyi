@@ -30,14 +30,14 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Ma
 cd ..
 
 # Add Luci theme compilation package
-cd package/lean
+mkdir -p package/lean && cd package/lean # Ensure the directory exists and change into it
 rm -rf luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon && \
 
 # Add Luci theme settings package
-
-rm -rf luci-app-argon-config # if it exists
-git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git luci-app-argon-config && \
+mkdir -p luci-app-argon-config # Ensure the directory exists
+rm -rf luci-app-argon-config # Remove existing if any
+git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git luci-app-argon-config
 
 # Change kernel version
 

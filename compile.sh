@@ -27,6 +27,7 @@ sed -i 's/192.168.1.1/10.0.0.2/g' package/base-files/files/bin/config_generate &
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Makefile && \
 
 # Add Luci theme compilation package
+cd ../..
 
 cd package/lean
 rm -rf luci-theme-argon
@@ -35,7 +36,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-
 # Add Luci theme settings package
 
 rm -rf luci-app-argon-config # if it exists
-git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git luci-app-argon-config && \
+git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git luci-app-argon-config
 
 # Change kernel version
 

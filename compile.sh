@@ -28,13 +28,11 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Ma
 
 # Add Luci theme compilation package
 cd ../..
-
 cd package/lean
 rm -rf luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon && \
 
 # Add Luci theme settings package
-
 rm -rf luci-app-argon-config # if it exists
 git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git luci-app-argon-config
 

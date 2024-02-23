@@ -22,3 +22,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argone/' feeds/luci/collections/luci/M
 
 # Change kernel version
 # sed -i 's/KERNEL_PATCHVER:=6.1/KERNEL_PATCHVER:=6.6/g' ./target/linux/x86/Makefile && \
+
+# Add exit 0 to indicate successful completion of the script
+exit 0

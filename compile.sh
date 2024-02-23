@@ -46,3 +46,6 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git luci-a
 # Generate .config file non-interactively
 
 make defconfig && \
+
+# Add exit 0 to indicate successful completion of the script
+exit 0
